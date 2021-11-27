@@ -55,7 +55,7 @@ func TestRobotsTxt(t *testing.T) {
 	req, _ := http.NewRequest("GET", "/robots.txt", nil)
 	proxy.ServeHTTP(rw, req)
 	assert.Equal(t, 200, rw.Code)
-	assert.Equal(t, "User-agent: *\nDisallow: /\n", rw.Body.String())
+	assert.Equal(t, "User-agent: *\r\nDisallow: /\r\n", rw.Body.String())
 }
 
 type TestProvider struct {
